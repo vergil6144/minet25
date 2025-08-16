@@ -22,3 +22,7 @@ async def read_x():
 @app.get("/contact")
 async def contact():
     return FileResponse("/static/contact.html")
+
+@app.get("/stocks")
+async def contact():
+    return FileResponse("/static/stocks.html")
