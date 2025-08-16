@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExMinet - FastAPI Static Server</title>
+    <meta name="description" content="ExMinet FastAPI static file server">
+    <link rel="stylesheet" href="/static/styles/global.css">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+    <link rel="stylesheet" href="/static/styles/ammendments.css?v=222">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-item search">
+            <div class="search-wrapper">
+                <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="nav-item hyperlinks">
+            <a class="nav-button"  href="/static/index.html" id="home">Home</a>
+            <a class="nav-button" href="/static/about.html" id="about">About</a>
+            <a  href="/static/contact.html">News <img class="dropIcon" src="/static/images/icons/drop.png">
+                <div class="dropdown news-dropdown">
+                    <span class="dropdown-item" id="/latest">Latest News</span>
+                    <span class="dropdown-item" id="/announcements">Announcements</span>
+                    <span class="dropdown-item" id="/updates">Updates</span>
+                </div>
+            </a>
+            <a class="nav-button" href="/static/terms.html">Contact Us <img src="/static/images/icons/drop.png" class="dropIcon"><div class="dropdown news-dropdown">
+                    <span class="dropdown-item" id="/latest">Latest News</span>
+                    <span class="dropdown-item" id="/announcements">Announcements</span>
+                    <span class="dropdown-item" id="/updates">Updates</span>
+                </div></a>
+            <a class="nav-button vote-icon" href="/static/privacy.html" class="vote-icon">VOTE</a>
+        </div>
+    </nav>
+
+    <div class="Hero-text">
+        <h1>Ammendments</h1>
+    </div>
+
+    <div class="amendment-log">
+        <div class="amendment-search">
+            <input type="text" placeholder="Search amendments...">
+            <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 1</p>
+            <p class="Desc">Details of the first amendment ...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+        <div class="amendment-item">
+            <p class="Title">Amendment 2</p>
+            <p class="Desc">Details of the second amendment g...</p>
+            <p class="Date">Date</p>
+        </div>
+    </div>  
+
+    <div class="ammendment-window">
+        <div class="ammendment-header">
+            <span class="ammendment-title">Amendment Title</span>
+            <img class="ammendment-close" src="/static/images/icons/cross.png" id="ammendment-close">
+        </div>
+        <div class="ammendment-content">
+            <p class="ammendment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    
+
+</body>
+<script src="/static/scripts/navbar.js"></script>
+<script src="/static/scripts/amendments.js"></script>
+</html>

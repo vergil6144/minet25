@@ -1,0 +1,216 @@
+Body{
+    background-color:#d3d1d1 !important;
+    
+}
+
+.Hero-text{
+    width: 100%;
+    padding-left: 1.4rem;
+    display: flex;
+    
+    
+}
+
+.Hero-text h1{
+    font-family: "Jersey 25";
+    font-size: 7rem;
+    color: #304C8A;
+    text-align: center;
+}
+
+.amendment-log{
+    width: 100%;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    overflow-y: auto;
+}
+
+.amendment-item{
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #ece9d8;
+    border: 2px solid #d4d0c8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.amendment-search{
+    width: 100%;
+    background-color: #ece9d8;
+    border: 2px solid #d4d0c8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.amendment-search input{
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    background-color: #ece9d8;
+    font-size: 1.2rem;
+     border: 2px outset #d4d0c8;
+     border: 3px solid #94907D;
+}
+
+.amendment-search img{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    cursor: pointer;
+}
+
+.ammendment-window {
+    position: fixed;
+    width: 500px;
+    max-width: 90vw;
+    background-color: #ece9d8;
+    border: 2px outset #d4d0c8;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    font-family: "MS Sans Serif", sans-serif;
+    z-index: 1000;
+
+}
+
+.ammendment-header {
+    background: #1f4788;
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #808080;
+    cursor: move;
+    user-select: none;
+}
+
+.ammendment-title {
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.ammendment-close {
+    width: 16px;
+    height: 16px;
+    background-color: #ece9d8;
+    border: 1px outset #d4d0c8;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ammendment-close:hover {
+    background-color: #f0f0f0;
+    border-color: #4080ff;
+}
+
+.ammendment-close:active {
+    border: 1px inset #d4d0c8;
+    background-color: #c0c0c0;
+}
+
+/* Amendment Window Content */
+.ammendment-content {
+    height: 75%;
+    padding: 0.5rem;
+    font-size: 2rem;
+    background-color: white;
+    border: 2px inset #d4d0c8;
+    margin: 4px;
+    overflow-y: auto;
+}
+
+.ammendment-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #000;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Scrollbar for amendment content */
+.ammendment-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.ammendment-content::-webkit-scrollbar-track {
+    background-color: #ece9d8;
+    border: 1px inset #d4d0c8;
+}
+
+.ammendment-content::-webkit-scrollbar-thumb {
+    background-color: #d4d0c8;
+    border: 1px outset #d4d0c8;
+}
+
+.ammendment-content::-webkit-scrollbar-thumb:hover {
+    background-color: #c0c0c0;
+}
+
+.ammendment-content::-webkit-scrollbar-button {
+    background-color: #ece9d8;
+    border: 1px outset #d4d0c8;
+    height: 16px;
+}
+
+.resize-handle {
+    position: absolute;
+    background-color: transparent;
+    z-index: 1001;
+}
+
+.resize-se {
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M16 16V10h-2v4h-4v2h6z'/%3E%3C/svg%3E");
+}
+
+.resize-se {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #ece9d8;
+    border-left: 1px solid #808080;
+    border-top: 1px solid #808080;
+    cursor: se-resize;
+}
+
+.resize-s {
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    right: 12px;
+    height: 4px;
+    cursor: s-resize;
+}
+
+.resize-e {
+    position: absolute;
+    top: 20px;
+    bottom: 12px;
+    right: 0;
+    width: 4px;
+    cursor: e-resize;
+}
+
+.resize-se:hover,
+.resize-s:hover,
+.resize-e:hover {
+    background-color: #f0f0f0;
+}
