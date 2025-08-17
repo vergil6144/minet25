@@ -1,19 +1,19 @@
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-)
+    password_hash VARCHAR(255) NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS amendments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title VARCHAR(200) NOT NULL,
-    amendment_status VARCHAR(20) DEFAULT 'proposed',
+    amendment_disc VARCHAR(500) NOT NULL,
     date_proposed DATE NOT NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS queries(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     query_subject VARCHAR(200) NOT NULL,
     query_content VARCHAR(500) NOT NULL,
-    user_id INTEGER NOT NULL,
-)
+    user_id INTEGER NOT NULL
+);

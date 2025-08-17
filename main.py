@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from database.dbops import *
 import os 
 
 app = FastAPI(title="ExMinet")
@@ -22,3 +23,16 @@ async def read_x():
 @app.get("/contact")
 async def contact():
     return FileResponse("/static/contact.html")
+
+@app.get("/api/ammendments/all")
+async def get_all():
+    ammendments = await get_all_ammendments()
+    print(ammendments)
+
+@app.post("/api/ammendments/create")
+async def create_amendment_endpoint(title: str, description: str, number: int, date_proposed: str):
+    try:
+        await create_amendment(title, description, number, date_proposed)
+        return {"status": "success", "message": "Amendment created successfully"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
