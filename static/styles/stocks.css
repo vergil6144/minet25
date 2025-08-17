@@ -1,0 +1,51 @@
+body {
+    background-color: #d3d1d1 !important;
+}
+
+.thing {
+    display: flex;
+    flex-direction: row;
+}
+
+.Hero-text {
+    width: 100%;
+    padding-left: 1.4rem;
+    display: flex;
+}
+
+.Hero-text h1 {
+    font-family: "Jersey 25";
+    font-size: 7rem;
+    color: #304C8A;
+    text-align: center;
+}
+
+.myChart {
+    display: none;
+    padding-left: 2rem;
+    margin-right: 8rem;
+}
+
+.stock-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 37.5rem;
+    /* 600px */
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.stock-table th,
+.stock-table td {
+    border: 0.15rem solid #9d9d9d;
+    /* 1px */
+    padding: 0.5rem;
+}
+
+.stock-table th {
+    background-color: #f8f8f8;
+}
+
+.stock-table td:nth-child(2) {
+    background-color: #f0f0f0;
+}

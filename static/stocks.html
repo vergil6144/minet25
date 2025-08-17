@@ -8,7 +8,7 @@
     <meta name="description" content="ExMinet FastAPI static file server">
     <link rel="stylesheet" href="/static/styles/global.css">
     <link rel="stylesheet" href="/static/styles/navbar.css">
-    <link rel="stylesheet" href="/static/styles.css?v=900">
+    <link rel="stylesheet" href="/static/styles/stocks.css">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -44,35 +44,50 @@
     </nav>
 
     <div class="Hero-text">
-        <h1>.com For All</h1>
-        <h2>where every government aspect is online</h2>
+        <h1>Stocks</h1>
     </div>
-
-    <div class="home-content">
-        <div class="content-buttons">
-            <p class="documents"> <img src="/static/images/icons/docs.png"> Access your documents</p>
-            <p class="documents"> <img src="/static/images/icons/calender.png"> calender</p>
-            <p class="documents" id="map-open"> <img src="/static/images/icons/docs.png"> Map</p>
-            <p class="documents"> <img src="/static/images/icons/docs.png"> Access your documents</p>
-        </div>
+    <div class="thing">
+        <canvas id="myChart" class="myChart" style="width:100%;max-width:50rem"></canvas>
 
 
-        <div class="map-container">
-            <div class="map-header">
-                <span class="map-title">Government Map</span>
-                <img class="map-close" src="/static/images/icons/cross.png" id="map-close">
-            </div>
-            <img class="map-image" src="/static/images/map.png" alt="Government Map">
-
-        </div>
-
-
+        <table class="stock-table">
+            <thead>
+                <tr>
+                    <th>Name of Company</th>
+                    <th>Trend</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>fuck Corp</td>
+                    <td>↑ Rising</td>
+                    <td>1,250</td>
+                </tr>
+                <tr>
+                    <td>fuck Ltd</td>
+                    <td>↓ Falling</td>
+                    <td>980</td>
+                </tr>
+                <tr>
+                    <td>fuck Inc</td>
+                    <td>→ Stable</td>
+                    <td>1,560</td>
+                </tr>
+                <tr>
+                    <td>fuck Inc</td>
+                    <td>→ Stable</td>
+                    <td>1,205</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
-
-
 </body>
 <script src="/static/scripts/navbar.js"></script>
-<script src="/static/scripts/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+
+</script>
+<script src="/static/scripts/stocks.js"></script>
 
 </html>

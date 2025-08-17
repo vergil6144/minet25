@@ -36,3 +36,6 @@ async def create_amendment_endpoint(title: str, description: str, number: int, d
         return {"status": "success", "message": "Amendment created successfully"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+@app.get("/stocks")
+async def contact():
+    return FileResponse("/static/stocks.html")
