@@ -7,14 +7,14 @@
     <title>ExMinet - FastAPI Static Server</title>
     <meta name="description" content="ExMinet FastAPI static file server">
     <link rel="stylesheet" href="/static/styles/global.css">
-    <link rel="stylesheet" href="/static/styles/navbar.css?v=3">
-    <link rel="stylesheet" href="/static/styles.css?v=11">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+    <link rel="stylesheet" href="/static/styles/profile.css?v=23329">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="nav-item search">
             <div class="search-wrapper">
                 <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="nav-item hyperlinks">
-            <a class="nav-button active" href="/static/index.html" id="home">Home</a>
+            <a class="nav-button" href="/static/index.html" id="home">Home</a>
             
             <a id="Utilities" class="nav-dropdown">Utilities <img class="dropIcon" src="/static/images/icons/drop.png">
                 <div class="dropdown news-dropdown">
@@ -43,40 +43,32 @@
         </div>
     </nav>
 
-    <div class="Hero-text">
-        <h1>.com For All</h1>
-        <h2>where every government aspect is online</h2>
+    <div class="hero-text">
+        <h1>Profile</h1>
     </div>
 
-    <div class="home-content">
-        <div class="content-buttons">
-            <p class="documents"> <img src="/static/images/icons/docs.png"> Access your documents</p>
-            <p class="documents"> <img src="/static/images/icons/calender.png"> calender</p>
-            <p class="documents" id="map-open"> <img src="/static/images/icons/map.png"> Map</p>
-        </div>
-
-
-        <div class="map-container">
-            <div class="map-header">
-                <span class="map-title">Government Map</span>
-                <img class="map-close" src="/static/images/icons/cross.png" id="map-close">
+    <div class="profile-container">
+        <div class="profile-header">
+            <img class="profile-image" src="/static/images/icons/profile.png" alt="Profile Image">
+            <div class="profile-header-info">
+                <p class="profile-name"><span id="name">YO GURT</span></p>
+                <p class="profile-email stat">EMAIL: <span id="email">yogurt@enp.com</span></p>
+                <p class="device-id stat">DEVICE-ID: <span id="device_id">D2120</span> </p>
+                <p class="age stat">AGE: <span id="age">12</span></p>
+                <p class="gender stat">GENDER: <span id="gender">Male</span></p>
             </div>
-            <img class="map-image" src="/static/images/map.png" alt="Government Map">
-
         </div>
-
-        
-
-
-    </div>
-    <div class="flag-container">
-            <img class="flag-image" src="/static/images/flag.png" alt="ExMinet Flag">
+       
+        <div class="profile-logout">
+            LOG OUT
         </div>
+    </div>  
 
-
+    
 
 </body>
-<script src="/static/scripts/navbar.js?v=9"></script>
-<script src="/static/scripts/index.js"></script>
+<script src="/static/scripts/auth.js"></script>
+<script src="/static/scripts/navbar.js"></script>
+<script src="/static/scripts/profile.js"></script>
 
 </html>

@@ -11,22 +11,51 @@ Body{
     
 }
 
+.computer-icon{
+    width:20%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 4.5%;
+
+}
+
+.computer-icon img{
+    width: 90%;
+    height: auto;
+    max-width: 20rem;
+    max-height: 20rem;
+    margin-left: 1.4rem;
+}
+
 .Hero-text h1{
     font-family: "Jersey 25";
     font-size: 7rem;
     color: #304C8A;
     text-align: center;
+    margin-bottom:-1rem;
 }
 
 .amendment-log{
-    width: 100%;
+    width: 75%;
     padding-left: 1.4rem;
     padding-right: 1.4rem;
     align-self: center;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap:0.5rem;
     overflow-y: auto;
+    height: 70vh;
+}
+
+
+
+.main-content{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
 }
 
 .amendment-item{
@@ -41,6 +70,7 @@ Body{
 
 .amendment-search{
     width: 100%;
+    
     background-color: #ece9d8;
     border: 2px solid #d4d0c8;
     display: flex;
@@ -51,6 +81,7 @@ Body{
 
 .amendment-search input{
     width: 100%;
+    font-family:"PixelFont";
     padding: 0.5rem;
     border: none;
     background-color: #ece9d8;

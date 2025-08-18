@@ -8,13 +8,12 @@
     <meta name="description" content="ExMinet FastAPI static file server">
     <link rel="stylesheet" href="/static/styles/global.css">
     <link rel="stylesheet" href="/static/styles/navbar.css">
-    <link rel="stylesheet" href="/static/styles/stocks.css">
+    <link rel="stylesheet" href="/static/styles/stocks.css?v=9">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-
-    <nav class="navbar">
+ <nav class="navbar">
         <div class="nav-item search">
             <div class="search-wrapper">
                 <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
@@ -22,24 +21,24 @@
             </div>
         </div>
         <div class="nav-item hyperlinks">
-            <a class="nav-button" href="/static/index.html" id="home">Home</a>
-            <a class="nav-button" href="/static/about.html" id="about">About</a>
-            <a href="/static/contact.html">News <img class="dropIcon" src="/static/images/icons/drop.png">
+            <a class="nav-button " href="/static/index.html" id="home">Home</a>
+            
+            <a id="Utilities" class="nav-dropdown">Utilities <img class="dropIcon" src="/static/images/icons/drop.png">
                 <div class="dropdown news-dropdown">
-                    <span class="dropdown-item" id="/latest">Latest News</span>
-                    <span class="dropdown-item" id="/announcements">Announcements</span>
-                    <span class="dropdown-item" id="/updates">Updates</span>
+                    <span class="dropdown-item" id="locker">Locker</span>
+                    <span class="dropdown-item" id="banking">Banking</span>
                 </div>
             </a>
-            <a class="nav-button" href="/static/terms.html">Contact Us <img src="/static/images/icons/drop.png"
-                    class="dropIcon">
+            <a class="nav-dropdown active">News <img class="dropIcon" src="/static/images/icons/drop.png">
                 <div class="dropdown news-dropdown">
-                    <span class="dropdown-item" id="/latest">Latest News</span>
-                    <span class="dropdown-item" id="/announcements">Announcements</span>
-                    <span class="dropdown-item" id="/updates">Updates</span>
+                    <span class="dropdown-item" id="stocks">Stocks</span>
+                    <span class="dropdown-item" id="ammendments">Ammendments</span>
+                    <!-- <span class="dropdown-item" id="announcements">Announcements</span> -->
                 </div>
             </a>
-            <a class="nav-button vote-icon" href="/static/privacy.html" class="vote-icon">VOTE</a>
+            <a class="nav-button" id="contact">Contact Us 
+            </a>
+            <a class="nav-button profile-icon" id="profile" href="/profile"><img src="/static/images/icons/profile.png"></a>
         </div>
     </nav>
 
@@ -47,7 +46,7 @@
         <h1>Stocks</h1>
     </div>
     <div class="thing">
-        <canvas id="myChart" class="myChart" style="width:100%;max-width:50rem"></canvas>
+        <canvas id="myChart" class="myChart" style="max-height:35vh"></canvas>
 
 
         <table class="stock-table">
@@ -60,22 +59,22 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>fuck Corp</td>
+                    <td>Amaira's Life</td>
                     <td>↑ Rising</td>
                     <td>1,250</td>
                 </tr>
                 <tr>
-                    <td>fuck Ltd</td>
+                    <td>IT</td>
                     <td>↓ Falling</td>
                     <td>980</td>
                 </tr>
                 <tr>
-                    <td>fuck Inc</td>
+                    <td>Sugarcane</td>
                     <td>→ Stable</td>
                     <td>1,560</td>
                 </tr>
                 <tr>
-                    <td>fuck Inc</td>
+                    <td>Citrus</td>
                     <td>→ Stable</td>
                     <td>1,205</td>
                 </tr>

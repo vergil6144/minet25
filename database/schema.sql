@@ -1,7 +1,13 @@
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS usersNew2 (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL
+    device_id VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INTEGER NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    qr_path VARCHAR(200),
+    password_hash VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS amendments (
@@ -15,5 +21,13 @@ CREATE TABLE IF NOT EXISTS queries(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     query_subject VARCHAR(200) NOT NULL,
     query_content VARCHAR(500) NOT NULL,
+    user_id INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS documents (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_name VARCHAR(200) NOT NULL,
+    mime_type VARCHAR(100),
+    file_path VARCHAR(500) NOT NULL,
     user_id INTEGER NOT NULL
 );

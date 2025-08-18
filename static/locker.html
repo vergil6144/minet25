@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExMinet - FastAPI Static Server</title>
+    <meta name="description" content="ExMinet FastAPI static file server">
+    <link rel="stylesheet" href="/static/styles/global.css">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+    <link rel="stylesheet" href="/static/styles/locker.css?v=90">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+     <nav class="navbar">
+        <div class="nav-item search">
+            <div class="search-wrapper">
+                <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="nav-item hyperlinks">
+            <a class="nav-button" href="/static/index.html" id="home">Home</a>
+            
+            <a id="Utilities" class="nav-dropdown active">Utilities <img class="dropIcon" src="/static/images/icons/drop.png">
+                <div class="dropdown news-dropdown">
+                    <span class="dropdown-item" id="locker">Locker</span>
+                    <span class="dropdown-item" id="banking">Banking</span>
+                </div>
+            </a>
+            <a class="nav-dropdown">News <img class="dropIcon" src="/static/images/icons/drop.png">
+                <div class="dropdown news-dropdown">
+                    <span class="dropdown-item" id="stocks">Stocks</span>
+                    <span class="dropdown-item" id="ammendments">Ammendments</span>
+                    <span class="dropdown-item" id="announcements">Announcements</span>
+                </div>
+            </a>
+            <a class="nav-button" id="contact">Contact Us 
+            </a>
+            <a class="nav-button profile-icon" id="profile" href="/profile"><img src="/static/images/icons/profile.png"></a>
+        </div>
+    </nav>
+
+    <div class="hero-text">
+        <h1>Documents</h1>
+    </div>
+
+    <div class="doc-search">
+        <div class="search-wrapper">
+            <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
+            <input type="text" placeholder="Search documents...">
+        </div>
+    </div>
+
+    <div class="doc-items">
+        <div class="doc-item" id="upload">
+            <img src="/static/images/icons/upload.png" alt="Upload Icon">
+            <div class="doc-tttle">
+                Upload
+            </div>   
+        </div>
+         <div class="doc-item openable">
+            <img src="/static/images/icons/kcard.png" alt="Upload Icon">
+            <div class="doc-tttle">
+                Kanav Card
+            </div>   
+        </div>
+         <div class="doc-item openable">
+            <img src="/static/images/icons/birth.png" alt="Upload Icon">
+            <div class="doc-tttle">
+                Birth certificate
+            </div>   
+        </div>
+         <div class="doc-item openable" id="personal">
+            <img src="/static/images/icons/matri.png" alt="Upload Icon">
+            <div class="doc-tttle">
+                Marksheet
+            </div>   
+        </div>
+         <div class="doc-item openable">
+            <img src="/static/images/icons/pass.png" alt="Upload Icon">
+            <div class="doc-tttle">
+                Passport
+            </div>   
+        </div>
+    </div>
+
+    <div class="documents-window">
+        <div class="documents-header">
+            <span class="documents-title">Upload Document</span>
+            <img class="documents-close" src="/static/images/icons/cross.png" id="documents-close">
+        </div>  
+
+        <div class="documents-content">
+        </div>
+    </div>  
+
+</body>
+<script src="/static/scripts/navbar.js"></script>
+<script src="/static/scripts/locker.js?v=22"></script>
+<script src="/static/scripts/auth.js"></script>
+
+</html>

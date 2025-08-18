@@ -1,13 +1,13 @@
 .hero-text{
     margin-left: 2rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .hero-text h1{
     font-family: "Jersey 25";
     font-size:8.5rem;
     letter-spacing: 0.5rem;
-    color: #E8D98B;
+    color: #304C8A;
     font-weight: bold;
     line-height: 0.8 !important;
     display: inline-block;

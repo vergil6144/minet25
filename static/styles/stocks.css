@@ -21,6 +21,7 @@ body {
 }
 
 .myChart {
+    height: 80vh;
     display: none;
     padding-left: 2rem;
     margin-right: 8rem;
@@ -32,7 +33,7 @@ body {
     max-width: 37.5rem;
     /* 600px */
     text-align: center;
-    margin: 2rem 0;
+    margin-right: 5%;
 }
 
 .stock-table th,

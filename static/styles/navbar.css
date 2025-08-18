@@ -5,21 +5,26 @@
     width: 100vw;
     background-color: #C0C0C0;
     justify-content: space-between;
-    padding: 0.7rem;
-    padding-bottom: 0.2rem;
+    padding: 0.4rem;
+    padding-bottom: 0.3rem;
     padding-left: 1.7rem;
     padding-right: 1.4rem;
     font-family: "PixelFont", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search {
-    width: 36%
+    width: 30%
 }
+
+.profile-icon img{
+    height: 1.7rem;
+}
+
 
 .search input {
     width: 100%;
     padding: 0.1rem;
-    font-size: 1.31rem;
+    font-size: 1.2rem;
     background-color: #979797;
     border: 3px solid #94907D;
     font-family: "PixelFont", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -38,13 +43,18 @@
 .hyperlinks a {
     text-decoration: none;
     color: #666666;
-    font-size: 1.31rem;
+    font-size: 1rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .hyperlinks a div {
     position: absolute;
+    top: 100%;
     left: 0;
+   
     opacity: 0;
     background-color: rgb(218, 216, 216);
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -53,6 +63,7 @@
     transform: translateY(-10px);
     flex-direction: column;
     margin-top: 5px;
+
     border-right: 3px solid #666666;
     border-bottom: 3px solid #666666;
     border-top: 3px solid #FFFFFF;
@@ -67,9 +78,12 @@
 
 .hyperlinks a div span {
     padding: 0.2rem 0.5rem;
+    min-width: 100px;
+    border-bottom: 1px solid #666666;
     color: #666666;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .hyperlinks a div span:hover {
@@ -90,7 +104,13 @@
     position: relative;
 }
 
+.active{
+    color: #304C8A !important;
+    font-weight: 600;
+}
+
 .search-wrapper {
+      width:100%;
     position: relative;
     display: inline-block;
 }

@@ -7,14 +7,14 @@
     <title>ExMinet - FastAPI Static Server</title>
     <meta name="description" content="ExMinet FastAPI static file server">
     <link rel="stylesheet" href="/static/styles/global.css">
-    <link rel="stylesheet" href="/static/styles/navbar.css?v=3">
-    <link rel="stylesheet" href="/static/styles.css?v=11">
+    <link rel="stylesheet" href="/static/styles/navbar.css?v=9">
+    <link rel="stylesheet" href="/static/styles/login.css?v=9">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="nav-item search">
             <div class="search-wrapper">
                 <img src="/static/images/icons/search.png" class="search-icon" alt="Search">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="nav-item hyperlinks">
-            <a class="nav-button active" href="/static/index.html" id="home">Home</a>
+            <a class="nav-button" href="/static/index.html" id="home">Home</a>
             
             <a id="Utilities" class="nav-dropdown">Utilities <img class="dropIcon" src="/static/images/icons/drop.png">
                 <div class="dropdown news-dropdown">
@@ -42,41 +42,37 @@
             <a class="nav-button profile-icon" id="profile" href="/profile"><img src="/static/images/icons/profile.png"></a>
         </div>
     </nav>
-
-    <div class="Hero-text">
-        <h1>.com For All</h1>
-        <h2>where every government aspect is online</h2>
+    <div class="hero-text">
+        <h1>Log In</h1>
+    </div>
+    <div class="scanner-container">
+        Scan Kanav Card
+        <img class="status-icon" src="/static/images/icons/camera.png">
     </div>
 
-    <div class="home-content">
-        <div class="content-buttons">
-            <p class="documents"> <img src="/static/images/icons/docs.png"> Access your documents</p>
-            <p class="documents"> <img src="/static/images/icons/calender.png"> calender</p>
-            <p class="documents" id="map-open"> <img src="/static/images/icons/map.png"> Map</p>
+    <input type="file" id="image-input" accept="image/*" capture="environment" style="display: none;">
+
+    <div class="auth-window">
+        <div class="auth-header">
+           <span class="auth-title">Confirm login</span>
+            <img class="auth-close" src="/static/images/icons/cross.png" id="auth-close">
         </div>
-
-
-        <div class="map-container">
-            <div class="map-header">
-                <span class="map-title">Government Map</span>
-                <img class="map-close" src="/static/images/icons/cross.png" id="map-close">
+        <div class="auth-content">
+            <div class="username-container">
+                Welcome <span class="username">JOHN DOE</span>!
             </div>
-            <img class="map-image" src="/static/images/map.png" alt="Government Map">
-
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button id="login-button">Login</button>
         </div>
-
-        
-
 
     </div>
-    <div class="flag-container">
-            <img class="flag-image" src="/static/images/flag.png" alt="ExMinet Flag">
-        </div>
+   
 
-
-
+    
 </body>
-<script src="/static/scripts/navbar.js?v=9"></script>
-<script src="/static/scripts/index.js"></script>
+<script src="/static/scripts/navbar.js"></script>
+<script src="/static/scripts/login.js"></script>
 
 </html>

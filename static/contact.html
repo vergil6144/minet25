@@ -8,7 +8,7 @@
     <meta name="description" content="ExMinet FastAPI static file server">
     <link rel="stylesheet" href="/static/styles/global.css">
     <link rel="stylesheet" href="/static/styles/navbar.css">
-    <link rel="stylesheet" href="/static/styles/contact.css?v=121">
+    <link rel="stylesheet" href="/static/styles/contact.css?v=1">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -22,24 +22,26 @@
             </div>
         </div>
         <div class="nav-item hyperlinks">
-            <a class="nav-button"  href="/static/index.html" id="home">Home</a>
-            <a class="nav-button" href="/static/about.html" id="about">About</a>
-            <a  href="/static/contact.html">News <img class="dropIcon" src="/static/images/icons/drop.png">
+            <a class="nav-button active" href="/static/index.html" id="home">Home</a>
+            
+            <a id="Utilities" class="nav-dropdown">Utilities <img class="dropIcon" src="/static/images/icons/drop.png">
                 <div class="dropdown news-dropdown">
-                    <span class="dropdown-item" id="/latest">Latest News</span>
-                    <span class="dropdown-item" id="/announcements">Announcements</span>
-                    <span class="dropdown-item" id="/updates">Updates</span>
+                    <span class="dropdown-item" id="locker">Locker</span>
+                    <span class="dropdown-item" id="banking">Banking</span>
                 </div>
             </a>
-            <a class="nav-button" href="/static/terms.html">Contact Us <img src="/static/images/icons/drop.png" class="dropIcon"><div class="dropdown news-dropdown">
-                    <span class="dropdown-item" id="/latest">Latest News</span>
-                    <span class="dropdown-item" id="/announcements">Announcements</span>
-                    <span class="dropdown-item" id="/updates">Updates</span>
-                </div></a>
-            <a class="nav-button vote-icon" href="/static/privacy.html" class="vote-icon">VOTE</a>
+            <a class="nav-dropdown">News <img class="dropIcon" src="/static/images/icons/drop.png">
+                <div class="dropdown news-dropdown">
+                    <span class="dropdown-item" id="stocks">Stocks</span>
+                    <span class="dropdown-item" id="ammendments">Ammendments</span>
+                    <span class="dropdown-item" id="announcements">Announcements</span>
+                </div>
+            </a>
+            <a class="nav-button active" id="contact">Contact Us 
+            </a>
+            <a class="nav-button profile-icon" id="profile" href="/profile"><img src="/static/images/icons/profile.png"></a>
         </div>
     </nav>
-
     <div class="hero-text">
         <h1>Contact Us</h1>
     </div>
