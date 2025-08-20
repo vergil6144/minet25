@@ -29,6 +29,9 @@ async def read_root():
 @app.get("/ammendments")
 async def read_x():
     return FileResponse("static/ammendments.html")
+@app.get("/tab")
+async def read_x():
+    return FileResponse("static/tab.html")
 
 @app.get("/contact")
 async def contact():
