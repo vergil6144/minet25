@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
+const authFunc = async ()=>{
     token = localStorage.getItem('exminet_access_token');
        console.log(token)
     if (!token) {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         return;
     }
 
-    const userData = await response.json();
-    localStorage.setItem('exminet_user_data', JSON.stringify(userData));
-})
+    userData = await response.json();
+   
+    return userData
+}

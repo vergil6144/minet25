@@ -22,7 +22,7 @@ async def get_user_by_token(token):
         
         try:
             print(token)
-            cursor = await conn.execute("SELECT username,device_id,email,age,gender FROM users WHERE token = ?", (token,))
+            cursor = await conn.execute("SELECT username,device_id,email,age,gender,balance FROM users WHERE token = ?", (token,))
             user = await cursor.fetchone()
             return user
         finally:

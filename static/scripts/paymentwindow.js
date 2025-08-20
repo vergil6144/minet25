@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var amendmentWindow = document.querySelector('.transaction-window');
-    const amendmentHeader = document.querySelector('.transaction-header');
-    const amendmentClose = document.querySelector('.transaction-close');
+    var paymentWindow = document.querySelector('.payment-window');
+    const paymentHeader = document.querySelector('.payment-header');
+    const paymentClose = document.querySelector('.payment-close');
 
-    const items = document.querySelectorAll('.transaction-item');
+    const items = document.querySelectorAll('.payment-item');
     console.log(items);
     items.forEach(item => {
         item.addEventListener('click', function() {
-            // Show the amendment window when a transaction item is clicked
-            if (amendmentWindow) {
-                amendmentWindow.style.display = 'flex';
-                amendmentWindow.style.left = '50%';
-                amendmentWindow.style.top = '50%';
-                amendmentWindow.style.transform = 'translate(-50%, -50%)';
+            // Show the payment window when a payment item is clicked
+            if (paymentWindow) {
+                paymentWindow.style.display = 'flex';
+                paymentWindow.style.left = '50%';
+                paymentWindow.style.top = '50%';
+                paymentWindow.style.transform = 'translate(-50%, -50%)';
             }
         });
     })
     
-    if (!amendmentWindow || !amendmentHeader) return;
+    if (!paymentWindow || !paymentHeader) return;
 
     // Dragging variables
     let isDragging = false;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const resizeDiv = document.createElement('div');
             resizeDiv.className = handle.class;
             resizeDiv.style.cursor = handle.cursor;
-            amendmentWindow.appendChild(resizeDiv);
+            paymentWindow.appendChild(resizeDiv);
             
             resizeDiv.addEventListener('mousedown', startResize);
         });
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Get current window position
     function getWindowPosition() {
-        const rect = amendmentWindow.getBoundingClientRect();
+        const rect = paymentWindow.getBoundingClientRect();
         return {
             x: rect.left,
             y: rect.top
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start dragging
     function startDrag(e) {
-        if (e.target === amendmentClose || e.target.classList.contains('resize-')) return;
+        if (e.target === paymentClose || e.target.classList.contains('resize-')) return;
         
         isDragging = true;
         startX = e.clientX;
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         windowStartX = pos.x;
         windowStartY = pos.y;
         
-        amendmentWindow.style.transition = 'none';
+        paymentWindow.style.transition = 'none';
         document.body.style.userSelect = 'none';
         
         e.preventDefault();
@@ -85,15 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const newY = windowStartY + deltaY;
         
         // Keep within bounds
-        const maxX = window.innerWidth - amendmentWindow.offsetWidth;
-        const maxY = window.innerHeight - amendmentWindow.offsetHeight;
+        const maxX = window.innerWidth - paymentWindow.offsetWidth;
+        const maxY = window.innerHeight - paymentWindow.offsetHeight;
         
         const boundedX = Math.max(0, Math.min(newX, maxX));
         const boundedY = Math.max(0, Math.min(newY, maxY));
         
-        amendmentWindow.style.left = boundedX + 'px';
-        amendmentWindow.style.top = boundedY + 'px';
-        amendmentWindow.style.transform = 'none';
+        paymentWindow.style.left = boundedX + 'px';
+        paymentWindow.style.top = boundedY + 'px';
+        paymentWindow.style.transform = 'none';
     }
 
     // Stop dragging
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         startX = e.clientX;
         startY = e.clientY;
         
-        windowStartWidth = amendmentWindow.offsetWidth;
-        windowStartHeight = amendmentWindow.offsetHeight;
+        windowStartWidth = paymentWindow.offsetWidth;
+        windowStartHeight = paymentWindow.offsetHeight;
         
         document.body.style.userSelect = 'none';
         e.preventDefault();
@@ -142,8 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Apply minimum and maximum constraints
         
-        amendmentWindow.style.width = newWidth + 'px';
-        amendmentWindow.style.height = newHeight + 'px';
+        paymentWindow.style.width = newWidth + 'px';
+        paymentWindow.style.height = newHeight + 'px';
     }
 
     // Stop resizing
@@ -174,30 +174,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show window
     function showWindow() {
-        amendmentWindow.style.display = 'block';
-        amendmentWindow.style.left = '50%';
-        amendmentWindow.style.top = '50%';
-        amendmentWindow.style.transform = 'translate(-50%, -50%)';
-        amendmentWindow.style.width = '500px';
-        amendmentWindow.style.height = 'auto';
+        paymentWindow.style.display = 'block';
+        paymentWindow.style.left = '50%';
+        paymentWindow.style.top = '50%';
+        paymentWindow.style.transform = 'translate(-50%, -50%)';
+        paymentWindow.style.width = '500px';
+        paymentWindow.style.height = 'auto';
     }
 
     // Hide window
     function hideWindow() {
-        amendmentWindow.style.display = 'none';
+        paymentWindow.style.display = 'none';
     }
 
     // Event listeners
-    amendmentHeader.addEventListener('mousedown', startDrag);
+    paymentHeader.addEventListener('mousedown', startDrag);
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
 
-    if (amendmentClose) {
-        amendmentClose.addEventListener('click', hideWindow);
+    if (paymentClose) {
+        paymentClose.addEventListener('click', hideWindow);
     }
 
 
-    window.amendmentWindow = {
+    window.paymentWindow = {
         show: showWindow,
         hide: hideWindow
     };

@@ -43,10 +43,3 @@ CREATE TABLE IF NOT EXISTS transactions (
     FOREIGN KEY (sender_id) REFERENCES users(device_id),
     FOREIGN KEY (receiver_id) REFERENCES users(device_id)
 );
-CREATE TABLE IF NOT EXISTS stock_transactions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    symbol VARCHAR(10) NOT NULL,      
-    price DECIMAL(10, 2) NOT NULL,
-    shares INTEGER NOT NULL
-);
-

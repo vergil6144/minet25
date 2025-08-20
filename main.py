@@ -13,10 +13,6 @@ class AmendmentCreate(BaseModel):
     number: int
     date_proposed: str
 
-class StockBase(BaseModel):
-    symbol: str
-    current_price: float
-    available_shares: int
 
 app = FastAPI(title="ExMinet")
 
@@ -197,26 +193,7 @@ async def verify_qr(image: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="Invalid QR code")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"QR code verification failed: {str(e)}")
-@app.post("/stocks/", response_model=StockResponse)
-def create_stock(stock: StockCreate):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute(
-        "INSERT INTO stocks (symbol, company_name, current_price, available_shares) VALUES (?, ?, ?, ?)",
-        (stock.symbol, stock.company_name, stock.current_price, stock.available_shares)
-    )
-    conn.commit()
-    stock_id = cur.lastrowid
-    conn.close()
-    return {**stock.dict(), "id": stock_id}
 
-
-@app.get("/stocks/")
-def list_stocks():
-    conn = get_db_connection()
-    stocks = conn.execute("SELECT * FROM stocks").fetchall()
-    conn.close()
-    return [dict(s) for s in stocks]
 
 @app.post("/api/transactions/attempt")
 async def attemptTrans(

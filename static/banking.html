@@ -44,7 +44,7 @@
     </nav>
 
     <div class="hero-text">
-        <h1>Banking</h1>
+        <h1>Banking<img src="/static/images/icons/bank.png"></h1>
     </div>
 
     <div class="banking-container">
@@ -57,6 +57,10 @@
                     ₹ 1,00,000
                 </span>
             </div>  
+            <div class="account-actions">
+                <span class="pay">Pay</span>
+                <span class="recieve">Recieve</span>
+            </div>
         </div>
         <div class="transaction-container">
             <h1 class="transaction-title">Transactions</h1>
@@ -71,30 +75,55 @@
         </div>
     </div>
 
+    <div class="payment-window">
+        <div class="payment-header">
+            <span class="payment-header-title">Make a Payment</span>
+            <img class="payment-close" src="/static/images/icons/cross.png" id="payment-close">
+        </div>
+        <div class="payment-details">
+            <h1>Choose method</h1>
+            <div class="payment-options">
+                <div class="option" id="upi-option">
+                    <img src="/static/images/icons/camera.png" class="option-icon">
+                    <span class="option-title">Scan Kanav Card</span>
+                </div>
+                <div class="option" id="bank-transfer-option">
+                    <img src="/static/images/icons/profile.png" class="option-icon">
+                    <span class="option-title">Direct ID </span>
+                </div>
+            </div>
+        </div>
 
-    <div class="transaction-window ">  
+    </div>
+
+
+    <div class="transaction-window">  
+        <img src="/static/images/icons/stamp.png" class="transaction-icon">
         <div class="transaction-header">
-            <span class="transaction-title">Transaction Details</span>
+            <span class="transaction-header-title">Transaction Details</span>
              <img class="transaction-close" src="/static/images/icons/cross.png" id="transaction-close">
         </div>
         <div class="transaction-details">
            <div class="detail-header">
-                <span class="sender-container">Sender: <span class="sender-value">Anika Gurt</span></span>
+                <span class="sender container">Sender: <span class="target-value">Anika Gurt</span></span>
+                <span class="amount container">Amount: <span class="amount-value">₹ 10,000</span></span>
             </div>
             <div class="detail-main">
-                <span class="id-container">Transaction ID: <span class="id-value">182202</span></span>
-                <span class="amount-container">Amount: <span class="amount-value">₹ 10,000</span></span>
-                <span class="date-container">Date: <span class="date-value">2023-10-01</span></span>
-                <span class="status-container">Status: <span class="status-value">Completed</span></span>
-                <span class="type-container">Type: <span class="type-value debit">Debit</span></span>
-                <span class="description-container">Description: <span class="description-value">Payment for services rendered</span></span>
+                <span class="id container">Transaction ID: <span class="id-value">182202</span></span>
+                
+                <span class="date container">Date: <span class="date-value">2023-10-01</span></span>
+                <span class="status container">Status: <span class="status-value">Completed</span></span>
+                <span class="type container">Type: <span class="type-value debit">Debit</span></span>
+                <span class="description container">Description: <span class="description-value">Payment for services rendered</span></span>
                 
             </div>
         </div>
     </div>
    
 </body>
+<script src="/static/scripts/auth.js"></script>
 <script src="/static/scripts/navbar.js"></script>
+<script src="/static/scripts/paymentwindow.js"></script>
 <script src="/static/scripts/bankingwindow.js"></script>
-<script src="/static/scripts/banking.js"></script>
+<script src="/static/scripts/banking.js?v=2"></script>
 </html>
