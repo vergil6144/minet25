@@ -13,6 +13,7 @@ class AmendmentCreate(BaseModel):
     number: int
     date_proposed: str
 
+
 app = FastAPI(title="ExMinet")
 
 static_dir = "static"
@@ -170,12 +171,11 @@ async def verify_user(request: Request):
 async def create():
     try:
         await create_user(
-            username="testuser",
-            email="test@example",
-            device_id="device123",
-            age=30,
+            username="Aditya Garg",
+            email="sexmquee@sexmquee.com",
+            age=12,
             gender="male",
-            password_hash="123",
+            password_hash="demo2",
         )
         return {"status": "success", "message": "User created successfully"}
     except Exception as e:
@@ -194,6 +194,26 @@ async def verify_qr(image: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"QR code verification failed: {str(e)}")
 
+
+@app.post("/api/transactions/attempt")
+async def attemptTrans(
+    reciever_id: int = Form(...),
+    sender_id: int = Form(...),
+    amount: float = Form(...),
+    Type: str = Form(...)
+):
+    try:
+        if not reciever_id or not sender_id or not amount or not Type:
+            raise HTTPException(status_code=400, detail="Missing required fields")
+        
+        success = await attemptTransaction(reciever_id, sender_id, amount, Type)
+        if success:
+            return {"status": "success", "message": "Transaction successful"}
+        else:
+            raise HTTPException(status_code=500, detail="Transaction failed")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Transaction error: {str(e)}")
+
 @app.post("/api/users/login")
 async def login_user(username: str = Form(...), password: str = Form(...)):
     try:
@@ -204,3 +224,77 @@ async def login_user(username: str = Form(...), password: str = Form(...)):
         return {"status": "success", "message": "Login successful", "token": token}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Login failed: {str(e)}")
+
+@app.get("/api/transactions/all")
+async def testtt(user_id:int):
+    print(user_id)
+    if not user_id:
+        raise HTTPException(status_code=400, detail="User ID is required")
+    id = user_id
+    try:
+        trans = await get_transactions_by_user(id)
+        if not trans:
+            raise HTTPException(status_code=404, detail="User not found")
+        transProc = processTransactions(trans,id)
+        return transProc
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching user: {str(e)}")
+
+@app.get("/api/transaction")
+async def get_transaction_by_idapi(transaction_id: int,user_id: int):
+    if not transaction_id:
+        raise HTTPException(status_code=400, detail="Transaction ID is required")
+    
+    try:
+
+        transaction = await get_transaction_by_id(transaction_id)
+
+        sender = await get_user_by_id(transaction['sender_id'])
+        receiver = await get_user_by_id(transaction['receiver_id'])
+
+       
+
+        if not transaction or not sender or not receiver:
+            raise HTTPException(status_code=404, detail="Transaction not found")
+
+        trans_response = {
+            "id": transaction['id'],
+            "amount": transaction['amount'],
+            "date": transaction['date'],
+            "description": transaction['transaction_type'],
+        }
+
+        if transaction['sender_id'] == user_id:
+            trans_response['target'] = receiver['username']
+            trans_response['type'] = "credit"
+
+        if transaction['receiver_id'] == user_id:
+            trans_response['target'] = sender['username']
+            trans_response['type'] = "debit"
+        
+        return trans_response
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=f"Error fetching transaction: {str(e)}")
+
+
+def processTransactions(transactions,user_id):
+    res = []
+    for transaction in transactions:
+        trans = {
+            "id": transaction['id'],
+            "date": transaction['date'],
+            "desc": transaction['transaction_type'],
+        }
+        if transaction['sender_id'] == user_id:
+            trans['target'] = transaction['receiver_id']
+            trans['amount'] = -transaction['amount']
+            trans['Type'] = "credit"
+        
+        if transaction['receiver_id'] == user_id:
+            trans['target'] = transaction['sender_id']
+            trans['amount'] = transaction['amount']
+            trans['Type'] = "debit"
+        res.append(trans)
+    return res
+       
